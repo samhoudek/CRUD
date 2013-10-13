@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<!--By Samantha Houdek 10/8/13 for CodeFellows Application-->
+<html>
+<head>
+<title>Address Book</title>
+<style src ="https://css/index.styl"></style>
+<style src ="https://css/mixin.styl"></style>
+<style src ="https://css/theme.styl"></style>
+<style src ="https://public/application.css"></style>
+
+<script type="text/javascript" src="https://public/application.js"></script>
+<script type ="text/javascript">
+
+function user (firstname,lastname,email){
+	this.firstname = firstname;
+	this.lastname = lastname;
+	this.email = email;}
+	
+var person1 = new user ("Samantha", "Houdek", "samhoudek@gmail.com");
+var person2 = new user ("Jess", "Rush", "rush@example.com");
+
+var contacts = [person1, person2];
+
+function printPerson(user) {
+    console.log(user.firstName + " " + user.lastName+ "'s"+ " " +"email" + " " + "is" + " " + user.email);
+}
+
+var list = function(){
+    var contactsLength = contacts.length; 
+    for( i = 0; i < contactsLength; i++){
+        printPerson(contacts[i]);
+    }
+
+var add = function(firstName,lastName,email,phoneNumber){
+contacts[contacts.length]= {
+firstName: firstName,
+lastName: lastName,
+email: email,
+};	
+};
+</script>
+</head>
+</html>
