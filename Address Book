@@ -8,19 +8,26 @@
 <style src ="https://css/mixin.styl"></style>
 <style src ="https://css/theme.styl"></style>
 <style src ="https://public/application.css"></style>
-
-<script type="text/javascript" src="https://public/application.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></>
+<script type="text/javascript" src="https:////cdnjs.cloudflare.com/ajax/libs/spinejs/1.2.0/all.min.js"></>
 <script type ="text/javascript">
+class Tasks extends Spine.Module
+  @extend(Spine.Events)
+ 
+var user = Spine.Model.sub();
+user.configure("firstname", "lastname", "email");
 
 function user (firstname,lastname,email){
 	this.firstname = firstname;
 	this.lastname = lastname;
 	this.email = email;}
-	
-var person1 = new user ("Samantha", "Houdek", "samhoudek@gmail.com");
-var person2 = new user ("Jess", "Rush", "rush@example.com");
 
-var contacts = [person1, person2];
+var user = new user ("firstname", "lastname", "email");
+	contact.save();
+var person1 = new user ("Samantha", "Houdek", "samhoudek@gmail.com");
+
+
+var contacts = [person1];
 
 function printPerson(user) {
     console.log(user.firstName + " " + user.lastName+ "'s"+ " " +"email" + " " + "is" + " " + user.email);
@@ -38,6 +45,8 @@ firstName: firstName,
 lastName: lastName,
 email: email,
 };	
+
+user.bind("create", function(newRecord) {});
 };
 </script>
 </head>
