@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--Samantha Houdek 10/8/13 for CodeFellows Application-->
+<!--Samantha Houdek 10/8/13 backbone.js tutorial for CodeFellows Application-->
 <html>
 <head>
 <title>Address Book</title>
@@ -24,8 +24,8 @@
       <tbody>
 	  <% _.each(users, function(user) { %>
           <tr>
-            <td><%= htmlEncode(user.get('firstname')) %></td>
-            <td><%= htmlEncode(user.get('lastname')) %></td>
+            <td><%= htmlEncode(user.get('first')) %></td>
+            <td><%= htmlEncode(user.get('last')) %></td>
             <td><%= htmlEncode(user.get('email')) %></td>
             <td><a class="btn" href="#/edit/<%= user.id %>">Edit</a></td>
           </tr>
@@ -38,9 +38,9 @@
     <form class="edit-user-form">
       <legend><%= user ? 'Edit' : 'New' %> User</legend>
         <label>First Name</label>
-        <input name="firstname" type="text" value="<%= user ? user.get('firstname') : '' %>">
+        <input name="first" type="text" value="<%= user ? user.get('first') : '' %>">
         <label>Last Name</label>
-        <input name="lastname" type="text" value="<%= user ? user.get('lastname') : '' %>">
+        <input name="last" type="text" value="<%= user ? user.get('last') : '' %>">
         <label>Email</label>
         <input name="email" type="text" value="<%= user ? user.get('email') : '' %>">
         <hr />
