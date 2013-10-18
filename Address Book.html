@@ -22,7 +22,7 @@
         </tr>
       </thead>
       <tbody>
-	  <% _.each(users, function(user) { %>
+          <% _.each(users, function(user) { %>
           <tr>
             <td><%= htmlEncode(user.get('first')) %></td>
             <td><%= htmlEncode(user.get('last')) %></td>
@@ -52,7 +52,7 @@
     </form>
 </script>
   
-	<script>
+        <script>
     function htmlEncode(value){
       return $('<div/>').text(value).html();
     }
@@ -77,7 +77,7 @@
     });
     
 var User = Backbone.Collection.extend({
-	urlRoot:'/users'
+        urlRoot:'/users'
 });
 var User = Backbone.Model.extend({
       urlRoot: '/users'
@@ -96,7 +96,7 @@ var User = Backbone.Model.extend({
         })
       }
     });
-	 var userListView = new UserListView();
+         var userListView = new UserListView();
 
     var UserEditView = Backbone.View.extend({
       el: '.page',
@@ -110,7 +110,7 @@ var User = Backbone.Model.extend({
         user.save(userDetails, {
           success: function (user) {
             router.navigate('', {trigger:true});
-			}
+                        }
         });
         return false;
       },
@@ -122,7 +122,7 @@ var User = Backbone.Model.extend({
           }
         })
       },
-		render: function (options) {
+                render: function (options) {
         var that = this;
         if(options.id) {
           that.user = new User({id: options.id});
@@ -141,7 +141,7 @@ var User = Backbone.Model.extend({
 
     var userEditView = new UserEditView();
 
-	var Router = Backbone.Router.extend({
+        var Router = Backbone.Router.extend({
         routes: {
           "": "home", 
           "edit/:id": "edit",
@@ -162,6 +162,4 @@ var User = Backbone.Model.extend({
 
 </body>
 </html> 
-  
-
   
